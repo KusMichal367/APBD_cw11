@@ -75,6 +75,9 @@ namespace APBD_cw11.Controllers
                 IdPatient = patient.IdPatient,
             };
 
+            _context.Prescriptions.Add(prescription);
+            await _context.SaveChangesAsync();
+
             var prescriptionMedicaments = dto.Medicaments.Select(m => new PrescriptionMedicament
             {
                 IdPrescription = prescription.IdPrescription,

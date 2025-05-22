@@ -26,14 +26,7 @@ namespace APBD_cw11.Controllers
             {
                 return NotFound($"Patient {id} not found");
             }
-            return Ok(new
-            {
-                patient.IdPatient,
-                patient.FirstName,
-                patient.LastName,
-                patient.BirthDate,
-                patient.Prescriptions,
-            });
+            return Ok(patient);
         }
     }
 }

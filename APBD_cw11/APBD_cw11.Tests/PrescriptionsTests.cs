@@ -18,7 +18,7 @@ namespace APBD_cw11.Tests
         public PrescriptionsTests()
         {
             var databaseForTests =
-                new DbContextOptionsBuilder<DatabaseContext>().UseInMemoryDatabase("TestDatabase").Options;
+                new DbContextOptionsBuilder<DatabaseContext>().UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
 
             _context = new DatabaseContext(databaseForTests);
             _context.Database.EnsureDeleted();

@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using APBD_cw11.Models;
 
 namespace APBD_cw11.DTOs;
@@ -51,5 +52,6 @@ public class PrescriptionOutputDto
 
 public class PatientInfoDto : PatientDto
 {
+    [JsonPropertyOrder(5)]
     public List<PrescriptionOutputDto> Prescriptions { get; set; }
 }

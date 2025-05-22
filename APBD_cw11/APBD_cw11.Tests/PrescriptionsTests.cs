@@ -21,6 +21,8 @@ namespace APBD_cw11.Tests
                 new DbContextOptionsBuilder<DatabaseContext>().UseInMemoryDatabase("TestDatabase").Options;
 
             _context = new DatabaseContext(databaseForTests);
+            _context.Database.EnsureDeleted();
+            _context.Database.EnsureCreated();
 
             _context.Doctors.Add(new Doctor{ IdDoctor = 1, FirstName = "Jan", LastName = "Kowalski", Email = "jkowalski@gmail.com" });
             _context.Medicaments.Add(new Medicament

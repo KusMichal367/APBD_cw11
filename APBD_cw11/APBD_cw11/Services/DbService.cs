@@ -15,7 +15,7 @@ public class DbService: IDbService
 
     public async Task<List<PrescriptionOutputDto>> GetPrescriptionsAsync()
     {
-        var prescriptions = await _context.Prescriptions.Select(e => new PrescriptionOutputDto
+        var prescriptions = await _context.Prescriptions.OrderBy(e => e.DueDate).Select(e => new PrescriptionOutputDto
         {
             IdPrescription = e.IdPrescription,
             Date = e.Date,

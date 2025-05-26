@@ -21,7 +21,7 @@ namespace APBD_cw11.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<PatientInfoDto>> GetPatient(int id)
         {
-            var patient = await _dbService.GetPatientsAsync(id);
+            var patient = await _dbService.GetPatientAsync(id);
             if (patient == null)
             {
                 return NotFound($"Patient {id} not found");

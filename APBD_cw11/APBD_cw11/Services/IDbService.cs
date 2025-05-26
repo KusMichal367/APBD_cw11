@@ -7,6 +7,6 @@ namespace APBD_cw11.Services;
 public interface IDbService
 {
     Task<List<PrescriptionOutputDto>> GetPrescriptionsAsync();
-    Task<PatientInfoDto> GetPatientsAsync(int id);
-    Task<IActionResult> AddPrescriptionAsync(PrescriptionInputDto dto);
+    Task<PatientInfoDto> GetPatientAsync(int id);
+    Task<IActionResult> CreatePrescriptionAsync(PrescriptionInputDto dto);
 }

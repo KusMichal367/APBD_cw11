@@ -41,7 +41,7 @@ public class DbService: IDbService
         return prescriptions;
     }
 
-    public async Task<PatientInfoDto> GetPatientsAsync(int id)
+    public async Task<PatientInfoDto> GetPatientAsync(int id)
     {
         var patient = await _context.Patients.Where(e => e.IdPatient == id).Select(a=> new PatientInfoDto
         {
@@ -72,7 +72,7 @@ public class DbService: IDbService
         return patient;
     }
 
-    public async Task<IActionResult> AddPrescriptionAsync(PrescriptionInputDto dto)
+    public async Task<IActionResult> CreatePrescriptionAsync(PrescriptionInputDto dto)
     {
         if (dto.Medicaments.Count > 10)
         {

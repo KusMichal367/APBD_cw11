@@ -29,7 +29,7 @@ namespace APBD_cw11.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPrescription([FromBody] PrescriptionInputDto dto)
         {
-            return await _dbService.AddPrescriptionAsync(dto);
+            return await _dbService.CreatePrescriptionAsync(dto);
         }
 
     }
